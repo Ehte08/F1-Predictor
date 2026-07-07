@@ -1,0 +1,1756 @@
+{
+  "race_name": "Italian Grand Prix",
+  "race_date": "2025-09-07",
+  "year": 2025,
+  "round": 16,
+  "circuit": "Autodromo Nazionale di Monza",
+  "model_version": "2026.07.07-1",
+  "generated_at": "2026-07-07T08:36:55+00:00",
+  "locked": true,
+  "weather": {
+    "rainfall": 0,
+    "avg_track_temp": 43.3,
+    "min_humidity": 40.0,
+    "source": "historical"
+  },
+  "grid": [
+    {
+      "driver": "Verstappen",
+      "team": "Red Bull",
+      "start": 1
+    },
+    {
+      "driver": "Norris",
+      "team": "McLaren",
+      "start": 2
+    },
+    {
+      "driver": "Piastri",
+      "team": "McLaren",
+      "start": 3
+    },
+    {
+      "driver": "Leclerc",
+      "team": "Ferrari",
+      "start": 4
+    },
+    {
+      "driver": "Russell",
+      "team": "Mercedes",
+      "start": 5
+    },
+    {
+      "driver": "Antonelli",
+      "team": "Mercedes",
+      "start": 6
+    },
+    {
+      "driver": "Bortoleto",
+      "team": "Audi",
+      "start": 7
+    },
+    {
+      "driver": "Alonso",
+      "team": "Aston Martin",
+      "start": 8
+    },
+    {
+      "driver": "Tsunoda",
+      "team": "Red Bull",
+      "start": 9
+    },
+    {
+      "driver": "Hamilton",
+      "team": "Ferrari",
+      "start": 10
+    },
+    {
+      "driver": "Bearman",
+      "team": "Haas F1 Team",
+      "start": 11
+    },
+    {
+      "driver": "Hulkenberg",
+      "team": "Audi",
+      "start": 12
+    },
+    {
+      "driver": "Sainz",
+      "team": "Williams",
+      "start": 13
+    },
+    {
+      "driver": "Albon",
+      "team": "Williams",
+      "start": 14
+    },
+    {
+      "driver": "Ocon",
+      "team": "Haas F1 Team",
+      "start": 15
+    },
+    {
+      "driver": "Stroll",
+      "team": "Aston Martin",
+      "start": 16
+    },
+    {
+      "driver": "Colapinto",
+      "team": "Alpine",
+      "start": 17
+    },
+    {
+      "driver": "Lawson",
+      "team": "Racing Bulls",
+      "start": 18
+    },
+    {
+      "driver": "Hadjar",
+      "team": "Racing Bulls",
+      "start": 19
+    },
+    {
+      "driver": "Gasly",
+      "team": "Alpine",
+      "start": 20
+    }
+  ],
+  "predictions": [
+    {
+      "driver": "Norris",
+      "team": "McLaren",
+      "start": 2,
+      "pred_finish": 1,
+      "pred_score": 1.703073,
+      "p_win": 0.3411,
+      "p_podium": 0.8822,
+      "p_points": 0.9316,
+      "p_dnf": 0.0686,
+      "position_probs": [
+        0.3411,
+        0.3176,
+        0.2235,
+        0.0451,
+        0.0037,
+        0.0004,
+        0.0,
+        0.0,
+        0.0,
+        0.0002,
+        0.0007,
+        0.0008,
+        0.0034,
+        0.0084,
+        0.013,
+        0.0155,
+        0.0128,
+        0.0101,
+        0.0032,
+        0.0005
+      ]
+    },
+    {
+      "driver": "Piastri",
+      "team": "McLaren",
+      "start": 3,
+      "pred_finish": 2,
+      "pred_score": 1.557095,
+      "p_win": 0.3045,
+      "p_podium": 0.8661,
+      "p_points": 0.9289,
+      "p_dnf": 0.0714,
+      "position_probs": [
+        0.3045,
+        0.3119,
+        0.2497,
+        0.0556,
+        0.0066,
+        0.0003,
+        0.0,
+        0.0,
+        0.0001,
+        0.0002,
+        0.0006,
+        0.0019,
+        0.0032,
+        0.0094,
+        0.0117,
+        0.0172,
+        0.0138,
+        0.0097,
+        0.003,
+        0.0006
+      ]
+    },
+    {
+      "driver": "Verstappen",
+      "team": "Red Bull",
+      "start": 1,
+      "pred_finish": 3,
+      "pred_score": 1.79298,
+      "p_win": 0.3049,
+      "p_podium": 0.7848,
+      "p_points": 0.8252,
+      "p_dnf": 0.175,
+      "position_probs": [
+        0.3049,
+        0.2767,
+        0.2032,
+        0.0372,
+        0.003,
+        0.0,
+        0.0,
+        0.0001,
+        0.0001,
+        0.0,
+        0.0014,
+        0.0026,
+        0.0089,
+        0.0211,
+        0.0292,
+        0.0396,
+        0.0383,
+        0.0226,
+        0.0089,
+        0.0022
+      ]
+    },
+    {
+      "driver": "Leclerc",
+      "team": "Ferrari",
+      "start": 4,
+      "pred_finish": 4,
+      "pred_score": -0.934239,
+      "p_win": 0.027,
+      "p_podium": 0.2502,
+      "p_points": 0.8767,
+      "p_dnf": 0.1233,
+      "position_probs": [
+        0.027,
+        0.0539,
+        0.1693,
+        0.3518,
+        0.1849,
+        0.0656,
+        0.0185,
+        0.0045,
+        0.001,
+        0.0002,
+        0.0005,
+        0.0027,
+        0.0047,
+        0.0131,
+        0.0197,
+        0.0257,
+        0.0277,
+        0.0193,
+        0.0089,
+        0.001
+      ]
+    },
+    {
+      "driver": "Russell",
+      "team": "Mercedes",
+      "start": 5,
+      "pred_finish": 5,
+      "pred_score": -2.16797,
+      "p_win": 0.0091,
+      "p_podium": 0.0854,
+      "p_points": 0.867,
+      "p_dnf": 0.1296,
+      "position_probs": [
+        0.0091,
+        0.0157,
+        0.0606,
+        0.1847,
+        0.2402,
+        0.1767,
+        0.1053,
+        0.0467,
+        0.0213,
+        0.0067,
+        0.0029,
+        0.0022,
+        0.0033,
+        0.0104,
+        0.0203,
+        0.0292,
+        0.0272,
+        0.0237,
+        0.0122,
+        0.0016
+      ]
+    },
+    {
+      "driver": "Antonelli",
+      "team": "Mercedes",
+      "start": 6,
+      "pred_finish": 6,
+      "pred_score": -2.786959,
+      "p_win": 0.0038,
+      "p_podium": 0.0382,
+      "p_points": 0.7299,
+      "p_dnf": 0.2518,
+      "position_probs": [
+        0.0038,
+        0.0076,
+        0.0268,
+        0.0997,
+        0.148,
+        0.1576,
+        0.1277,
+        0.0837,
+        0.0471,
+        0.0279,
+        0.0115,
+        0.0061,
+        0.0069,
+        0.0138,
+        0.0311,
+        0.0509,
+        0.0617,
+        0.0519,
+        0.0278,
+        0.0084
+      ]
+    },
+    {
+      "driver": "Hamilton",
+      "team": "Ferrari",
+      "start": 10,
+      "pred_finish": 7,
+      "pred_score": -3.579522,
+      "p_win": 0.0023,
+      "p_podium": 0.0217,
+      "p_points": 0.6754,
+      "p_dnf": 0.2367,
+      "position_probs": [
+        0.0023,
+        0.0045,
+        0.0149,
+        0.0469,
+        0.0886,
+        0.1138,
+        0.1223,
+        0.1231,
+        0.0928,
+        0.0662,
+        0.043,
+        0.0252,
+        0.0164,
+        0.013,
+        0.0234,
+        0.0392,
+        0.0574,
+        0.057,
+        0.0368,
+        0.0132
+      ]
+    },
+    {
+      "driver": "Bortoleto",
+      "team": "Audi",
+      "start": 7,
+      "pred_finish": 8,
+      "pred_score": -4.040961,
+      "p_win": 0.0014,
+      "p_podium": 0.0137,
+      "p_points": 0.6412,
+      "p_dnf": 0.1699,
+      "position_probs": [
+        0.0014,
+        0.0023,
+        0.01,
+        0.0374,
+        0.0671,
+        0.0921,
+        0.1088,
+        0.1166,
+        0.1099,
+        0.0956,
+        0.0746,
+        0.0524,
+        0.0341,
+        0.0231,
+        0.0202,
+        0.0265,
+        0.0405,
+        0.0455,
+        0.0316,
+        0.0103
+      ]
+    },
+    {
+      "driver": "Alonso",
+      "team": "Aston Martin",
+      "start": 8,
+      "pred_finish": 9,
+      "pred_score": -4.084912,
+      "p_win": 0.0021,
+      "p_podium": 0.0149,
+      "p_points": 0.6072,
+      "p_dnf": 0.2066,
+      "position_probs": [
+        0.0021,
+        0.002,
+        0.0108,
+        0.0332,
+        0.0643,
+        0.0888,
+        0.105,
+        0.1063,
+        0.103,
+        0.0917,
+        0.0721,
+        0.051,
+        0.0351,
+        0.0214,
+        0.0264,
+        0.0337,
+        0.0453,
+        0.0527,
+        0.0379,
+        0.0172
+      ]
+    },
+    {
+      "driver": "Tsunoda",
+      "team": "Red Bull",
+      "start": 9,
+      "pred_finish": 10,
+      "pred_score": -4.362233,
+      "p_win": 0.001,
+      "p_podium": 0.0102,
+      "p_points": 0.5255,
+      "p_dnf": 0.2304,
+      "position_probs": [
+        0.001,
+        0.0018,
+        0.0074,
+        0.0247,
+        0.0483,
+        0.0675,
+        0.0864,
+        0.0968,
+        0.0987,
+        0.0929,
+        0.0837,
+        0.0606,
+        0.0475,
+        0.0329,
+        0.0276,
+        0.0347,
+        0.05,
+        0.0588,
+        0.0527,
+        0.026
+      ]
+    },
+    {
+      "driver": "Bearman",
+      "team": "Haas F1 Team",
+      "start": 11,
+      "pred_finish": 11,
+      "pred_score": -5.134024,
+      "p_win": 0.0007,
+      "p_podium": 0.0058,
+      "p_points": 0.3594,
+      "p_dnf": 0.2165,
+      "position_probs": [
+        0.0007,
+        0.0008,
+        0.0043,
+        0.0124,
+        0.0256,
+        0.0367,
+        0.053,
+        0.0649,
+        0.0758,
+        0.0852,
+        0.095,
+        0.0922,
+        0.0807,
+        0.0694,
+        0.0535,
+        0.0426,
+        0.0447,
+        0.0515,
+        0.0611,
+        0.0499
+      ]
+    },
+    {
+      "driver": "Hulkenberg",
+      "team": "Audi",
+      "start": 12,
+      "pred_finish": 12,
+      "pred_score": -5.285699,
+      "p_win": 0.0004,
+      "p_podium": 0.0057,
+      "p_points": 0.3137,
+      "p_dnf": 0.237,
+      "position_probs": [
+        0.0004,
+        0.0015,
+        0.0038,
+        0.0117,
+        0.0186,
+        0.0338,
+        0.0418,
+        0.0587,
+        0.0678,
+        0.0756,
+        0.0838,
+        0.0884,
+        0.0875,
+        0.0733,
+        0.0615,
+        0.0583,
+        0.0445,
+        0.0619,
+        0.0708,
+        0.0563
+      ]
+    },
+    {
+      "driver": "Sainz",
+      "team": "Williams",
+      "start": 13,
+      "pred_finish": 13,
+      "pred_score": -5.149927,
+      "p_win": 0.0002,
+      "p_podium": 0.0046,
+      "p_points": 0.316,
+      "p_dnf": 0.2759,
+      "position_probs": [
+        0.0002,
+        0.0005,
+        0.0039,
+        0.0118,
+        0.0192,
+        0.0329,
+        0.0419,
+        0.0597,
+        0.0664,
+        0.0795,
+        0.0864,
+        0.0868,
+        0.0777,
+        0.0706,
+        0.0545,
+        0.0462,
+        0.0549,
+        0.0664,
+        0.0818,
+        0.0587
+      ]
+    },
+    {
+      "driver": "Hadjar",
+      "team": "Racing Bulls",
+      "start": 19,
+      "pred_finish": 14,
+      "pred_score": -5.461934,
+      "p_win": 0.0002,
+      "p_podium": 0.0037,
+      "p_points": 0.2596,
+      "p_dnf": 0.2649,
+      "position_probs": [
+        0.0002,
+        0.0008,
+        0.0027,
+        0.0088,
+        0.0147,
+        0.0244,
+        0.0381,
+        0.0415,
+        0.0569,
+        0.0715,
+        0.0836,
+        0.0836,
+        0.0886,
+        0.0815,
+        0.0709,
+        0.0629,
+        0.0507,
+        0.0597,
+        0.0804,
+        0.0785
+      ]
+    },
+    {
+      "driver": "Ocon",
+      "team": "Haas F1 Team",
+      "start": 15,
+      "pred_finish": 15,
+      "pred_score": -5.450828,
+      "p_win": 0.0004,
+      "p_podium": 0.0028,
+      "p_points": 0.263,
+      "p_dnf": 0.2812,
+      "position_probs": [
+        0.0004,
+        0.0007,
+        0.0017,
+        0.0104,
+        0.017,
+        0.026,
+        0.0363,
+        0.0463,
+        0.0579,
+        0.0663,
+        0.0727,
+        0.0846,
+        0.0889,
+        0.078,
+        0.0719,
+        0.0529,
+        0.0574,
+        0.0606,
+        0.0828,
+        0.0872
+      ]
+    },
+    {
+      "driver": "Stroll",
+      "team": "Aston Martin",
+      "start": 16,
+      "pred_finish": 16,
+      "pred_score": -5.464029,
+      "p_win": 0.0002,
+      "p_podium": 0.0029,
+      "p_points": 0.2443,
+      "p_dnf": 0.3053,
+      "position_probs": [
+        0.0002,
+        0.0005,
+        0.0022,
+        0.0082,
+        0.0148,
+        0.0261,
+        0.0346,
+        0.0393,
+        0.0571,
+        0.0613,
+        0.0702,
+        0.0863,
+        0.082,
+        0.0819,
+        0.0681,
+        0.058,
+        0.0578,
+        0.0677,
+        0.0892,
+        0.0945
+      ]
+    },
+    {
+      "driver": "Lawson",
+      "team": "Racing Bulls",
+      "start": 18,
+      "pred_finish": 17,
+      "pred_score": -6.145939,
+      "p_win": 0.0001,
+      "p_podium": 0.002,
+      "p_points": 0.1706,
+      "p_dnf": 0.2008,
+      "position_probs": [
+        0.0001,
+        0.0002,
+        0.0017,
+        0.0051,
+        0.0082,
+        0.0138,
+        0.0236,
+        0.0286,
+        0.0414,
+        0.0479,
+        0.0621,
+        0.0784,
+        0.0967,
+        0.1063,
+        0.1087,
+        0.0965,
+        0.0734,
+        0.0552,
+        0.0586,
+        0.0935
+      ]
+    },
+    {
+      "driver": "Albon",
+      "team": "Williams",
+      "start": 14,
+      "pred_finish": 18,
+      "pred_score": -5.403699,
+      "p_win": 0.0002,
+      "p_podium": 0.0029,
+      "p_points": 0.2236,
+      "p_dnf": 0.4018,
+      "position_probs": [
+        0.0002,
+        0.0005,
+        0.0022,
+        0.0084,
+        0.0144,
+        0.0227,
+        0.0287,
+        0.0415,
+        0.0491,
+        0.0559,
+        0.0582,
+        0.0684,
+        0.0758,
+        0.0657,
+        0.0552,
+        0.0587,
+        0.0641,
+        0.0901,
+        0.1234,
+        0.1168
+      ]
+    },
+    {
+      "driver": "Gasly",
+      "team": "Alpine",
+      "start": 20,
+      "pred_finish": 19,
+      "pred_score": -6.123582,
+      "p_win": 0.0002,
+      "p_podium": 0.0013,
+      "p_points": 0.1542,
+      "p_dnf": 0.2753,
+      "position_probs": [
+        0.0002,
+        0.0002,
+        0.0009,
+        0.005,
+        0.0071,
+        0.0124,
+        0.0176,
+        0.0287,
+        0.0344,
+        0.0477,
+        0.057,
+        0.0738,
+        0.0833,
+        0.1008,
+        0.1017,
+        0.0853,
+        0.0708,
+        0.0631,
+        0.0758,
+        0.1342
+      ]
+    },
+    {
+      "driver": "Colapinto",
+      "team": "Alpine",
+      "start": 17,
+      "pred_finish": 20,
+      "pred_score": -6.926647,
+      "p_win": 0.0002,
+      "p_podium": 0.0009,
+      "p_points": 0.087,
+      "p_dnf": 0.2159,
+      "position_probs": [
+        0.0002,
+        0.0003,
+        0.0004,
+        0.0019,
+        0.0057,
+        0.0084,
+        0.0104,
+        0.013,
+        0.0192,
+        0.0275,
+        0.04,
+        0.052,
+        0.0753,
+        0.1059,
+        0.1314,
+        0.1264,
+        0.107,
+        0.0725,
+        0.0531,
+        0.1494
+      ]
+    }
+  ],
+  "shap": {
+    "base_value": -3.495794,
+    "drivers": {
+      "Albon": [
+        {
+          "feature": "start",
+          "value": 14,
+          "shap": -0.843953
+        },
+        {
+          "feature": "quali_gap_pct",
+          "value": 2.285138,
+          "shap": -0.66465
+        },
+        {
+          "feature": "team_pace_ewm5",
+          "value": 11.997411,
+          "shap": -0.184351
+        },
+        {
+          "feature": "team_reliability_ewm10",
+          "value": 0.98638,
+          "shap": -0.106997
+        },
+        {
+          "feature": "driver_elo",
+          "value": 1495.14049,
+          "shap": -0.099841
+        },
+        {
+          "feature": "age_at_race",
+          "value": 29.459274,
+          "shap": 0.084523
+        },
+        {
+          "feature": "driver_active",
+          "value": 1,
+          "shap": 0.078258
+        },
+        {
+          "feature": "avg_track_temp",
+          "value": 43.3,
+          "shap": -0.077274
+        }
+      ],
+      "Alonso": [
+        {
+          "feature": "team_pace_ewm5",
+          "value": 9.295287,
+          "shap": 0.256437
+        },
+        {
+          "feature": "year",
+          "value": 2025,
+          "shap": -0.244684
+        },
+        {
+          "feature": "start",
+          "value": 8,
+          "shap": -0.198709
+        },
+        {
+          "feature": "teammate_quali_delta",
+          "value": -1.548567,
+          "shap": -0.159595
+        },
+        {
+          "feature": "team_reliability_ewm10",
+          "value": 0.995912,
+          "shap": -0.120248
+        },
+        {
+          "feature": "age_at_race",
+          "value": 44.109514,
+          "shap": -0.093332
+        },
+        {
+          "feature": "driver_circuit_avg",
+          "value": 13.6,
+          "shap": -0.057021
+        },
+        {
+          "feature": "driver",
+          "value": "Alonso",
+          "shap": -0.04263
+        }
+      ],
+      "Antonelli": [
+        {
+          "feature": "start",
+          "value": 6,
+          "shap": 0.508868
+        },
+        {
+          "feature": "quali_gap_pct",
+          "value": 1.011247,
+          "shap": 0.367416
+        },
+        {
+          "feature": "year",
+          "value": 2025,
+          "shap": -0.185683
+        },
+        {
+          "feature": "team_pace_ewm5",
+          "value": 9.669757,
+          "shap": 0.133089
+        },
+        {
+          "feature": "driver_elo",
+          "value": 1500.719845,
+          "shap": -0.110948
+        },
+        {
+          "feature": "age_at_race",
+          "value": 19.036277,
+          "shap": -0.096863
+        },
+        {
+          "feature": "teammate_quali_delta",
+          "value": 0.160453,
+          "shap": 0.060433
+        },
+        {
+          "feature": "driver_active",
+          "value": 1,
+          "shap": 0.047376
+        }
+      ],
+      "Bearman": [
+        {
+          "feature": "start",
+          "value": 11,
+          "shap": -0.464729
+        },
+        {
+          "feature": "quali_gap_pct",
+          "value": 1.819099,
+          "shap": -0.451983
+        },
+        {
+          "feature": "team_pace_ewm5",
+          "value": 12.159154,
+          "shap": -0.162544
+        },
+        {
+          "feature": "finish_ewm3",
+          "value": 10.8218,
+          "shap": -0.162411
+        },
+        {
+          "feature": "age_at_race",
+          "value": 20.334018,
+          "shap": -0.136828
+        },
+        {
+          "feature": "driver_elo",
+          "value": 1500.580102,
+          "shap": -0.135363
+        },
+        {
+          "feature": "year",
+          "value": 2025,
+          "shap": -0.132509
+        },
+        {
+          "feature": "teammate_quali_delta",
+          "value": -0.572055,
+          "shap": 0.04625
+        }
+      ],
+      "Bortoleto": [
+        {
+          "feature": "driver_elo",
+          "value": 1467.880207,
+          "shap": -0.313297
+        },
+        {
+          "feature": "finish_ewm3",
+          "value": 12.064211,
+          "shap": -0.222351
+        },
+        {
+          "feature": "quali_gap_pct",
+          "value": 1.165188,
+          "shap": 0.182425
+        },
+        {
+          "feature": "team_pace_ewm5",
+          "value": 11.849035,
+          "shap": -0.176736
+        },
+        {
+          "feature": "teammate_quali_delta",
+          "value": -0.772245,
+          "shap": -0.164959
+        },
+        {
+          "feature": "year",
+          "value": 2025,
+          "shap": -0.139436
+        },
+        {
+          "feature": "driver_reliability_ewm10",
+          "value": 0.826602,
+          "shap": 0.138382
+        },
+        {
+          "feature": "start",
+          "value": 7,
+          "shap": 0.120735
+        }
+      ],
+      "Colapinto": [
+        {
+          "feature": "start",
+          "value": 17,
+          "shap": -0.967514
+        },
+        {
+          "feature": "quali_gap_pct",
+          "value": 3.056623,
+          "shap": -0.835178
+        },
+        {
+          "feature": "team_pace_ewm5",
+          "value": 14.993246,
+          "shap": -0.744539
+        },
+        {
+          "feature": "driver_elo",
+          "value": 1451.04062,
+          "shap": -0.467641
+        },
+        {
+          "feature": "finish_ewm3",
+          "value": 14.532618,
+          "shap": -0.182366
+        },
+        {
+          "feature": "team_reliability_ewm10",
+          "value": 0.928861,
+          "shap": -0.102234
+        },
+        {
+          "feature": "driver_active",
+          "value": 1,
+          "shap": 0.071519
+        },
+        {
+          "feature": "driver_reliability_ewm10",
+          "value": 0.855718,
+          "shap": 0.065749
+        }
+      ],
+      "Gasly": [
+        {
+          "feature": "team_pace_ewm5",
+          "value": 14.993246,
+          "shap": -0.803549
+        },
+        {
+          "feature": "quali_gap_pct",
+          "value": 3.444765,
+          "shap": -0.768383
+        },
+        {
+          "feature": "start",
+          "value": 20,
+          "shap": -0.731327
+        },
+        {
+          "feature": "finish_ewm3",
+          "value": 15.709203,
+          "shap": -0.208677
+        },
+        {
+          "feature": "driver_elo",
+          "value": 1480.562544,
+          "shap": -0.105942
+        },
+        {
+          "feature": "teammate_quali_delta",
+          "value": 0.388142,
+          "shap": 0.095527
+        },
+        {
+          "feature": "driver_active",
+          "value": 1,
+          "shap": 0.093796
+        },
+        {
+          "feature": "avg_track_temp",
+          "value": 43.3,
+          "shap": -0.093793
+        }
+      ],
+      "Hadjar": [
+        {
+          "feature": "quali_gap_pct",
+          "value": 3.229043,
+          "shap": -0.877898
+        },
+        {
+          "feature": "start",
+          "value": 19,
+          "shap": -0.814934
+        },
+        {
+          "feature": "team_reliability_ewm10",
+          "value": 0.998703,
+          "shap": -0.129474
+        },
+        {
+          "feature": "driver_elo",
+          "value": 1515.311629,
+          "shap": -0.087854
+        },
+        {
+          "feature": "age_at_race",
+          "value": 20.941821,
+          "shap": -0.076459
+        },
+        {
+          "feature": "team_pace_ewm5",
+          "value": 10.952005,
+          "shap": 0.069322
+        },
+        {
+          "feature": "driver_circuit_avg",
+          "value": 8.742027,
+          "shap": 0.063446
+        },
+        {
+          "feature": "avg_track_temp",
+          "value": 43.3,
+          "shap": -0.055573
+        }
+      ],
+      "Hamilton": [
+        {
+          "feature": "driver_elo",
+          "value": 1705.683424,
+          "shap": 0.753539
+        },
+        {
+          "feature": "start",
+          "value": 10,
+          "shap": -0.456224
+        },
+        {
+          "feature": "quali_gap_pct",
+          "value": 1.592096,
+          "shap": -0.363587
+        },
+        {
+          "feature": "year",
+          "value": 2025,
+          "shap": -0.169964
+        },
+        {
+          "feature": "finish_ewm3",
+          "value": 14.432935,
+          "shap": -0.157496
+        },
+        {
+          "feature": "team_pace_ewm5",
+          "value": 10.988,
+          "shap": 0.153375
+        },
+        {
+          "feature": "team_reliability_ewm10",
+          "value": 1.0,
+          "shap": 0.104352
+        },
+        {
+          "feature": "teammate_quali_delta",
+          "value": 0.972663,
+          "shap": -0.078205
+        }
+      ],
+      "Hulkenberg": [
+        {
+          "feature": "start",
+          "value": 12,
+          "shap": -0.512058
+        },
+        {
+          "feature": "quali_gap_pct",
+          "value": 1.937433,
+          "shap": -0.484671
+        },
+        {
+          "feature": "finish_ewm3",
+          "value": 12.498093,
+          "shap": -0.207183
+        },
+        {
+          "feature": "team_pace_ewm5",
+          "value": 11.849035,
+          "shap": -0.171911
+        },
+        {
+          "feature": "team_reliability_ewm10",
+          "value": 0.990979,
+          "shap": -0.125112
+        },
+        {
+          "feature": "year",
+          "value": 2025,
+          "shap": -0.100663
+        },
+        {
+          "feature": "driver_elo",
+          "value": 1511.823001,
+          "shap": -0.094949
+        },
+        {
+          "feature": "age_at_race",
+          "value": 38.053388,
+          "shap": 0.079371
+        }
+      ],
+      "Lawson": [
+        {
+          "feature": "start",
+          "value": 18,
+          "shap": -1.004717
+        },
+        {
+          "feature": "quali_gap_pct",
+          "value": 3.156133,
+          "shap": -0.888818
+        },
+        {
+          "feature": "finish_ewm3",
+          "value": 10.927762,
+          "shap": -0.219492
+        },
+        {
+          "feature": "driver_elo",
+          "value": 1482.163724,
+          "shap": -0.205605
+        },
+        {
+          "feature": "team_reliability_ewm10",
+          "value": 0.986541,
+          "shap": -0.13227
+        },
+        {
+          "feature": "year",
+          "value": 2025,
+          "shap": -0.072016
+        },
+        {
+          "feature": "min_humidity",
+          "value": 40.0,
+          "shap": -0.063667
+        },
+        {
+          "feature": "team_pace_ewm5",
+          "value": 10.952005,
+          "shap": 0.06268
+        }
+      ],
+      "Leclerc": [
+        {
+          "feature": "start",
+          "value": 4,
+          "shap": 1.235817
+        },
+        {
+          "feature": "driver_elo",
+          "value": 1747.634606,
+          "shap": 0.789478
+        },
+        {
+          "feature": "quali_gap_pct",
+          "value": 0.619433,
+          "shap": 0.765832
+        },
+        {
+          "feature": "finish_ewm3",
+          "value": 12.476043,
+          "shap": -0.24853
+        },
+        {
+          "feature": "teammate_quali_delta",
+          "value": -0.972663,
+          "shap": -0.203041
+        },
+        {
+          "feature": "team_pace_ewm5",
+          "value": 10.988,
+          "shap": 0.177749
+        },
+        {
+          "feature": "year",
+          "value": 2025,
+          "shap": -0.160715
+        },
+        {
+          "feature": "driver_reliability_ewm10",
+          "value": 0.793706,
+          "shap": 0.160028
+        }
+      ],
+      "Norris": [
+        {
+          "feature": "start",
+          "value": 2,
+          "shap": 1.606717
+        },
+        {
+          "feature": "quali_gap_pct",
+          "value": 0.198883,
+          "shap": 1.295887
+        },
+        {
+          "feature": "driver_elo",
+          "value": 1784.070196,
+          "shap": 1.150865
+        },
+        {
+          "feature": "team_pace_ewm5",
+          "value": 5.007505,
+          "shap": 0.909106
+        },
+        {
+          "feature": "finish_ewm3",
+          "value": 10.934854,
+          "shap": -0.360587
+        },
+        {
+          "feature": "teammate_quali_delta",
+          "value": -0.224846,
+          "shap": 0.222912
+        },
+        {
+          "feature": "age_at_race",
+          "value": 25.817933,
+          "shap": 0.204483
+        },
+        {
+          "feature": "team_reliability_ewm10",
+          "value": 0.999999,
+          "shap": 0.133609
+        }
+      ],
+      "Ocon": [
+        {
+          "feature": "start",
+          "value": 15,
+          "shap": -0.814881
+        },
+        {
+          "feature": "quali_gap_pct",
+          "value": 2.391153,
+          "shap": -0.531031
+        },
+        {
+          "feature": "team_pace_ewm5",
+          "value": 12.159154,
+          "shap": -0.16958
+        },
+        {
+          "feature": "finish_ewm3",
+          "value": 12.355936,
+          "shap": -0.168258
+        },
+        {
+          "feature": "team_reliability_ewm10",
+          "value": 0.996728,
+          "shap": -0.114226
+        },
+        {
+          "feature": "driver_active",
+          "value": 1,
+          "shap": 0.100662
+        },
+        {
+          "feature": "avg_track_temp",
+          "value": 43.3,
+          "shap": -0.084521
+        },
+        {
+          "feature": "min_humidity",
+          "value": 40.0,
+          "shap": -0.080861
+        }
+      ],
+      "Piastri": [
+        {
+          "feature": "quali_gap_pct",
+          "value": 0.423729,
+          "shap": 1.30807
+        },
+        {
+          "feature": "driver_elo",
+          "value": 1779.602193,
+          "shap": 1.225386
+        },
+        {
+          "feature": "start",
+          "value": 3,
+          "shap": 1.100535
+        },
+        {
+          "feature": "team_pace_ewm5",
+          "value": 5.007505,
+          "shap": 0.884709
+        },
+        {
+          "feature": "finish_ewm3",
+          "value": 1.40303,
+          "shap": 0.455412
+        },
+        {
+          "feature": "age_at_race",
+          "value": 24.421629,
+          "shap": 0.213459
+        },
+        {
+          "feature": "driver_reliability_ewm10",
+          "value": 0.975558,
+          "shap": -0.103504
+        },
+        {
+          "feature": "team_reliability_ewm10",
+          "value": 0.999957,
+          "shap": -0.094425
+        }
+      ],
+      "Russell": [
+        {
+          "feature": "driver_elo",
+          "value": 1736.356032,
+          "shap": 0.566846
+        },
+        {
+          "feature": "quali_gap_pct",
+          "value": 0.850794,
+          "shap": 0.3169
+        },
+        {
+          "feature": "finish_ewm3",
+          "value": 4.266638,
+          "shap": 0.284569
+        },
+        {
+          "feature": "start",
+          "value": 5,
+          "shap": 0.279634
+        },
+        {
+          "feature": "year",
+          "value": 2025,
+          "shap": -0.190473
+        },
+        {
+          "feature": "age_at_race",
+          "value": 27.559206,
+          "shap": -0.142057
+        },
+        {
+          "feature": "teammate_quali_delta",
+          "value": -0.160453,
+          "shap": 0.140135
+        },
+        {
+          "feature": "team_pace_ewm5",
+          "value": 9.669757,
+          "shap": 0.0941
+        }
+      ],
+      "Sainz": [
+        {
+          "feature": "start",
+          "value": 13,
+          "shap": -0.849603
+        },
+        {
+          "feature": "quali_gap_pct",
+          "value": 2.100647,
+          "shap": -0.568494
+        },
+        {
+          "feature": "driver_elo",
+          "value": 1604.85365,
+          "shap": 0.231227
+        },
+        {
+          "feature": "team_pace_ewm5",
+          "value": 11.997411,
+          "shap": -0.212768
+        },
+        {
+          "feature": "finish_ewm3",
+          "value": 13.965953,
+          "shap": -0.168724
+        },
+        {
+          "feature": "year",
+          "value": 2025,
+          "shap": -0.121262
+        },
+        {
+          "feature": "team_reliability_ewm10",
+          "value": 0.988658,
+          "shap": -0.108263
+        },
+        {
+          "feature": "driver_reliability_ewm10",
+          "value": 0.855491,
+          "shap": 0.079645
+        }
+      ],
+      "Stroll": [
+        {
+          "feature": "start",
+          "value": 16,
+          "shap": -0.855139
+        },
+        {
+          "feature": "quali_gap_pct",
+          "value": 2.84393,
+          "shap": -0.835404
+        },
+        {
+          "feature": "team_pace_ewm5",
+          "value": 9.295287,
+          "shap": 0.34006
+        },
+        {
+          "feature": "driver_elo",
+          "value": 1473.59766,
+          "shap": -0.322311
+        },
+        {
+          "feature": "team_reliability_ewm10",
+          "value": 0.984967,
+          "shap": -0.107048
+        },
+        {
+          "feature": "driver_circuit_avg",
+          "value": 12.285714,
+          "shap": -0.091236
+        },
+        {
+          "feature": "driver_active",
+          "value": 1,
+          "shap": 0.087844
+        },
+        {
+          "feature": "avg_track_temp",
+          "value": 43.3,
+          "shap": -0.062134
+        }
+      ],
+      "Tsunoda": [
+        {
+          "feature": "driver_elo",
+          "value": 1449.909792,
+          "shap": -0.463603
+        },
+        {
+          "feature": "team_pace_ewm5",
+          "value": 9.290609,
+          "shap": 0.301905
+        },
+        {
+          "feature": "start",
+          "value": 9,
+          "shap": -0.198558
+        },
+        {
+          "feature": "finish_ewm3",
+          "value": 12.211911,
+          "shap": -0.192835
+        },
+        {
+          "feature": "year",
+          "value": 2025,
+          "shap": -0.149468
+        },
+        {
+          "feature": "team_reliability_ewm10",
+          "value": 0.977119,
+          "shap": -0.127853
+        },
+        {
+          "feature": "driver_active",
+          "value": 0,
+          "shap": -0.088909
+        },
+        {
+          "feature": "quali_gap_pct",
+          "value": 1.464521,
+          "shap": 0.088399
+        }
+      ],
+      "Verstappen": [
+        {
+          "feature": "start",
+          "value": 1,
+          "shap": 2.081132
+        },
+        {
+          "feature": "quali_gap_pct",
+          "value": 0.0,
+          "shap": 1.895435
+        },
+        {
+          "feature": "driver_elo",
+          "value": 1869.747449,
+          "shap": 1.14889
+        },
+        {
+          "feature": "teammate_quali_delta",
+          "value": -1.464521,
+          "shap": -0.359758
+        },
+        {
+          "feature": "age_at_race",
+          "value": 53.511294,
+          "shap": -0.27749
+        },
+        {
+          "feature": "team_pace_ewm5",
+          "value": 9.290609,
+          "shap": 0.225563
+        },
+        {
+          "feature": "finish_ewm3",
+          "value": 4.821357,
+          "shap": 0.202783
+        },
+        {
+          "feature": "driver_circuit_avg",
+          "value": 8.714286,
+          "shap": 0.201131
+        }
+      ]
+    }
+  },
+  "actual": [
+    {
+      "driver": "Verstappen",
+      "team": "Red Bull",
+      "finish": 1,
+      "status": "finished"
+    },
+    {
+      "driver": "Norris",
+      "team": "McLaren",
+      "finish": 2,
+      "status": "finished"
+    },
+    {
+      "driver": "Piastri",
+      "team": "McLaren",
+      "finish": 3,
+      "status": "finished"
+    },
+    {
+      "driver": "Leclerc",
+      "team": "Ferrari",
+      "finish": 4,
+      "status": "finished"
+    },
+    {
+      "driver": "Russell",
+      "team": "Mercedes",
+      "finish": 5,
+      "status": "finished"
+    },
+    {
+      "driver": "Hamilton",
+      "team": "Ferrari",
+      "finish": 6,
+      "status": "finished"
+    },
+    {
+      "driver": "Albon",
+      "team": "Williams",
+      "finish": 7,
+      "status": "finished"
+    },
+    {
+      "driver": "Bortoleto",
+      "team": "Audi",
+      "finish": 8,
+      "status": "finished"
+    },
+    {
+      "driver": "Antonelli",
+      "team": "Mercedes",
+      "finish": 9,
+      "status": "finished"
+    },
+    {
+      "driver": "Hadjar",
+      "team": "Racing Bulls",
+      "finish": 10,
+      "status": "finished"
+    },
+    {
+      "driver": "Sainz",
+      "team": "Williams",
+      "finish": 11,
+      "status": "finished"
+    },
+    {
+      "driver": "Bearman",
+      "team": "Haas F1 Team",
+      "finish": 12,
+      "status": "finished"
+    },
+    {
+      "driver": "Tsunoda",
+      "team": "Red Bull",
+      "finish": 13,
+      "status": "finished"
+    },
+    {
+      "driver": "Lawson",
+      "team": "Racing Bulls",
+      "finish": 14,
+      "status": "finished"
+    },
+    {
+      "driver": "Ocon",
+      "team": "Haas F1 Team",
+      "finish": 15,
+      "status": "finished"
+    },
+    {
+      "driver": "Gasly",
+      "team": "Alpine",
+      "finish": 16,
+      "status": "finished"
+    },
+    {
+      "driver": "Colapinto",
+      "team": "Alpine",
+      "finish": 17,
+      "status": "finished"
+    },
+    {
+      "driver": "Stroll",
+      "team": "Aston Martin",
+      "finish": 18,
+      "status": "finished"
+    },
+    {
+      "driver": "Alonso",
+      "team": "Aston Martin",
+      "finish": 20,
+      "status": "dnf"
+    },
+    {
+      "driver": "Hulkenberg",
+      "team": "Audi",
+      "finish": 20,
+      "status": "dnf"
+    }
+  ],
+  "metrics": {
+    "spearman": 0.725837,
+    "ndcg3": 1.0,
+    "ndcg10": 0.934832,
+    "ndcg20": 0.986581,
+    "winner_correct": false,
+    "podium_hits": 3,
+    "mean_abs_delta": 2.95
+  }
+}

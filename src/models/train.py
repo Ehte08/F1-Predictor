@@ -38,16 +38,31 @@ def time_based_split(
     return df[df["date"].isin(train_dates)].copy(), df[df["date"].isin(test_dates)].copy()
 
 
-def fit(df: pd.DataFrame, **model_overrides) -> tuple[LGBMRanker, list[str]]:
+def fit(
+    df: pd.DataFrame, finishers_only: bool = True, **model_overrides
+) -> tuple[LGBMRanker, list[str]]:
     """
     Prepare features and fit LGBMRanker on the supplied DataFrame.
+
+    When ``finishers_only`` (default) DNF rows are dropped from the ranker's training
+    set and groups are recomputed — the ranker then learns the finishing order among
+    cars that make the flag, and P(DNF) is handled separately by the DNF classifier /
+    Plackett-Luce layer. Set ``finishers_only=False`` for the legacy full-field path.
+
     Returns the fitted model and its feature name list.
     """
-    X, y = prepare_features(df)
-    y_rel = finish_to_relevance(y, max_pos=int(y.max()))
-    # groups must be in date order to match X rows (prepare_features re-sorts by ["date", "driver"])
-    groups = df.groupby("date", sort=True).size().tolist()
+    X, y, meta = prepare_features(df, return_meta=True)
 
+    if finishers_only:
+        keep = (meta["dnf"] == 0).to_numpy()
+        X = X.loc[keep].reset_index(drop=True)
+        y = y.loc[keep].reset_index(drop=True)
+        groups = meta.loc[keep].groupby("date", sort=True).size().tolist()
+    else:
+        # meta is already in ["date", "driver"] order, matching X
+        groups = meta.groupby("date", sort=True).size().tolist()
+
+    y_rel = finish_to_relevance(y, max_pos=int(y.max()))
     model = build_ranker(**model_overrides)
     model.fit(X, y_rel, group=groups)
     return model, model.feature_name_

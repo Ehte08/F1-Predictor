@@ -1,0 +1,649 @@
+{
+  "updated_at": "2026-07-07T10:12:04+00:00",
+  "model_version": "2026.07.07-1",
+  "races": [
+    {
+      "slug": "2025-01-australian-grand-prix",
+      "race_name": "Australian Grand Prix",
+      "race_date": "2025-03-16",
+      "year": 2025,
+      "round": 1,
+      "has_actual": true,
+      "locked": true
+    },
+    {
+      "slug": "2025-02-chinese-grand-prix",
+      "race_name": "Chinese Grand Prix",
+      "race_date": "2025-03-23",
+      "year": 2025,
+      "round": 2,
+      "has_actual": true,
+      "locked": true
+    },
+    {
+      "slug": "2025-03-japanese-grand-prix",
+      "race_name": "Japanese Grand Prix",
+      "race_date": "2025-04-06",
+      "year": 2025,
+      "round": 3,
+      "has_actual": true,
+      "locked": true
+    },
+    {
+      "slug": "2025-04-bahrain-grand-prix",
+      "race_name": "Bahrain Grand Prix",
+      "race_date": "2025-04-13",
+      "year": 2025,
+      "round": 4,
+      "has_actual": true,
+      "locked": true
+    },
+    {
+      "slug": "2025-05-saudi-arabian-grand-prix",
+      "race_name": "Saudi Arabian Grand Prix",
+      "race_date": "2025-04-20",
+      "year": 2025,
+      "round": 5,
+      "has_actual": true,
+      "locked": true
+    },
+    {
+      "slug": "2025-06-miami-grand-prix",
+      "race_name": "Miami Grand Prix",
+      "race_date": "2025-05-04",
+      "year": 2025,
+      "round": 6,
+      "has_actual": true,
+      "locked": true
+    },
+    {
+      "slug": "2025-07-emilia-romagna-grand-prix",
+      "race_name": "Emilia Romagna Grand Prix",
+      "race_date": "2025-05-18",
+      "year": 2025,
+      "round": 7,
+      "has_actual": true,
+      "locked": true
+    },
+    {
+      "slug": "2025-08-monaco-grand-prix",
+      "race_name": "Monaco Grand Prix",
+      "race_date": "2025-05-25",
+      "year": 2025,
+      "round": 8,
+      "has_actual": true,
+      "locked": true
+    },
+    {
+      "slug": "2025-09-spanish-grand-prix",
+      "race_name": "Spanish Grand Prix",
+      "race_date": "2025-06-01",
+      "year": 2025,
+      "round": 9,
+      "has_actual": true,
+      "locked": true
+    },
+    {
+      "slug": "2025-10-canadian-grand-prix",
+      "race_name": "Canadian Grand Prix",
+      "race_date": "2025-06-15",
+      "year": 2025,
+      "round": 10,
+      "has_actual": true,
+      "locked": true
+    },
+    {
+      "slug": "2025-11-austrian-grand-prix",
+      "race_name": "Austrian Grand Prix",
+      "race_date": "2025-06-29",
+      "year": 2025,
+      "round": 11,
+      "has_actual": true,
+      "locked": true
+    },
+    {
+      "slug": "2025-12-british-grand-prix",
+      "race_name": "British Grand Prix",
+      "race_date": "2025-07-06",
+      "year": 2025,
+      "round": 12,
+      "has_actual": true,
+      "locked": true
+    },
+    {
+      "slug": "2025-13-belgian-grand-prix",
+      "race_name": "Belgian Grand Prix",
+      "race_date": "2025-07-27",
+      "year": 2025,
+      "round": 13,
+      "has_actual": true,
+      "locked": true
+    },
+    {
+      "slug": "2025-14-hungarian-grand-prix",
+      "race_name": "Hungarian Grand Prix",
+      "race_date": "2025-08-03",
+      "year": 2025,
+      "round": 14,
+      "has_actual": true,
+      "locked": true
+    },
+    {
+      "slug": "2025-15-dutch-grand-prix",
+      "race_name": "Dutch Grand Prix",
+      "race_date": "2025-08-31",
+      "year": 2025,
+      "round": 15,
+      "has_actual": true,
+      "locked": true
+    },
+    {
+      "slug": "2025-16-italian-grand-prix",
+      "race_name": "Italian Grand Prix",
+      "race_date": "2025-09-07",
+      "year": 2025,
+      "round": 16,
+      "has_actual": true,
+      "locked": true
+    },
+    {
+      "slug": "2025-17-azerbaijan-grand-prix",
+      "race_name": "Azerbaijan Grand Prix",
+      "race_date": "2025-09-21",
+      "year": 2025,
+      "round": 17,
+      "has_actual": true,
+      "locked": true
+    },
+    {
+      "slug": "2025-18-singapore-grand-prix",
+      "race_name": "Singapore Grand Prix",
+      "race_date": "2025-10-05",
+      "year": 2025,
+      "round": 18,
+      "has_actual": true,
+      "locked": true
+    },
+    {
+      "slug": "2025-19-united-states-grand-prix",
+      "race_name": "United States Grand Prix",
+      "race_date": "2025-10-19",
+      "year": 2025,
+      "round": 19,
+      "has_actual": true,
+      "locked": true
+    },
+    {
+      "slug": "2025-20-mexico-city-grand-prix",
+      "race_name": "Mexico City Grand Prix",
+      "race_date": "2025-10-26",
+      "year": 2025,
+      "round": 20,
+      "has_actual": true,
+      "locked": true
+    },
+    {
+      "slug": "2025-21-sao-paulo-grand-prix",
+      "race_name": "S\u00e3o Paulo Grand Prix",
+      "race_date": "2025-11-09",
+      "year": 2025,
+      "round": 21,
+      "has_actual": true,
+      "locked": true
+    },
+    {
+      "slug": "2025-22-las-vegas-grand-prix",
+      "race_name": "Las Vegas Grand Prix",
+      "race_date": "2025-11-22",
+      "year": 2025,
+      "round": 22,
+      "has_actual": true,
+      "locked": true
+    },
+    {
+      "slug": "2025-23-qatar-grand-prix",
+      "race_name": "Qatar Grand Prix",
+      "race_date": "2025-11-30",
+      "year": 2025,
+      "round": 23,
+      "has_actual": true,
+      "locked": true
+    },
+    {
+      "slug": "2025-24-abu-dhabi-grand-prix",
+      "race_name": "Abu Dhabi Grand Prix",
+      "race_date": "2025-12-07",
+      "year": 2025,
+      "round": 24,
+      "has_actual": true,
+      "locked": true
+    },
+    {
+      "slug": "2026-01-australian-grand-prix",
+      "race_name": "Australian Grand Prix",
+      "race_date": "2026-03-08",
+      "year": 2026,
+      "round": 1,
+      "has_actual": true,
+      "locked": true
+    },
+    {
+      "slug": "2026-02-chinese-grand-prix",
+      "race_name": "Chinese Grand Prix",
+      "race_date": "2026-03-15",
+      "year": 2026,
+      "round": 2,
+      "has_actual": true,
+      "locked": true
+    },
+    {
+      "slug": "2026-03-japanese-grand-prix",
+      "race_name": "Japanese Grand Prix",
+      "race_date": "2026-03-29",
+      "year": 2026,
+      "round": 3,
+      "has_actual": true,
+      "locked": true
+    },
+    {
+      "slug": "2026-04-miami-grand-prix",
+      "race_name": "Miami Grand Prix",
+      "race_date": "2026-05-03",
+      "year": 2026,
+      "round": 4,
+      "has_actual": true,
+      "locked": true
+    },
+    {
+      "slug": "2026-05-canadian-grand-prix",
+      "race_name": "Canadian Grand Prix",
+      "race_date": "2026-05-24",
+      "year": 2026,
+      "round": 5,
+      "has_actual": true,
+      "locked": true
+    },
+    {
+      "slug": "2026-06-monaco-grand-prix",
+      "race_name": "Monaco Grand Prix",
+      "race_date": "2026-06-07",
+      "year": 2026,
+      "round": 6,
+      "has_actual": true,
+      "locked": true
+    },
+    {
+      "slug": "2026-07-barcelona-grand-prix",
+      "race_name": "Barcelona Grand Prix",
+      "race_date": "2026-06-14",
+      "year": 2026,
+      "round": 7,
+      "has_actual": true,
+      "locked": true
+    },
+    {
+      "slug": "2026-08-austrian-grand-prix",
+      "race_name": "Austrian Grand Prix",
+      "race_date": "2026-06-28",
+      "year": 2026,
+      "round": 8,
+      "has_actual": true,
+      "locked": true
+    },
+    {
+      "slug": "2026-09-british-grand-prix",
+      "race_name": "British Grand Prix",
+      "race_date": "2026-07-05",
+      "year": 2026,
+      "round": 9,
+      "has_actual": true,
+      "locked": true
+    },
+    {
+      "slug": "2026-10-belgian-grand-prix",
+      "race_name": "Belgian Grand Prix",
+      "race_date": "2026-07-19",
+      "year": 2026,
+      "round": 10,
+      "has_actual": false,
+      "locked": true
+    }
+  ],
+  "next_race": {
+    "slug": "2026-10-belgian-grand-prix",
+    "race_name": "Belgian Grand Prix",
+    "race_date": "2026-07-19"
+  },
+  "track_record": [
+    {
+      "slug": "2025-01-australian-grand-prix",
+      "race_name": "Australian Grand Prix",
+      "race_date": "2025-03-16",
+      "spearman": 0.743685,
+      "ndcg3": 0.926807,
+      "winner_correct": true,
+      "podium_hits": 2,
+      "mean_abs_delta": 3.85
+    },
+    {
+      "slug": "2025-02-chinese-grand-prix",
+      "race_name": "Chinese Grand Prix",
+      "race_date": "2025-03-23",
+      "spearman": 0.456563,
+      "ndcg3": 0.996806,
+      "winner_correct": true,
+      "podium_hits": 3,
+      "mean_abs_delta": 4.75
+    },
+    {
+      "slug": "2025-03-japanese-grand-prix",
+      "race_name": "Japanese Grand Prix",
+      "race_date": "2025-04-06",
+      "spearman": 0.893233,
+      "ndcg3": 0.987801,
+      "winner_correct": false,
+      "podium_hits": 3,
+      "mean_abs_delta": 1.8
+    },
+    {
+      "slug": "2025-04-bahrain-grand-prix",
+      "race_name": "Bahrain Grand Prix",
+      "race_date": "2025-04-13",
+      "spearman": 0.807823,
+      "ndcg3": 0.981412,
+      "winner_correct": true,
+      "podium_hits": 2,
+      "mean_abs_delta": 2.65
+    },
+    {
+      "slug": "2025-05-saudi-arabian-grand-prix",
+      "race_name": "Saudi Arabian Grand Prix",
+      "race_date": "2025-04-20",
+      "spearman": 0.774436,
+      "ndcg3": 0.975602,
+      "winner_correct": true,
+      "podium_hits": 2,
+      "mean_abs_delta": 2.4
+    },
+    {
+      "slug": "2025-06-miami-grand-prix",
+      "race_name": "Miami Grand Prix",
+      "race_date": "2025-05-04",
+      "spearman": 0.864912,
+      "ndcg3": 0.951205,
+      "winner_correct": false,
+      "podium_hits": 2,
+      "mean_abs_delta": 2.7
+    },
+    {
+      "slug": "2025-07-emilia-romagna-grand-prix",
+      "race_name": "Emilia Romagna Grand Prix",
+      "race_date": "2025-05-18",
+      "spearman": 0.773223,
+      "ndcg3": 0.886438,
+      "winner_correct": false,
+      "podium_hits": 2,
+      "mean_abs_delta": 3.25
+    },
+    {
+      "slug": "2025-08-monaco-grand-prix",
+      "race_name": "Monaco Grand Prix",
+      "race_date": "2025-05-25",
+      "spearman": 0.746145,
+      "ndcg3": 0.996806,
+      "winner_correct": true,
+      "podium_hits": 2,
+      "mean_abs_delta": 3.25
+    },
+    {
+      "slug": "2025-09-spanish-grand-prix",
+      "race_name": "Spanish Grand Prix",
+      "race_date": "2025-06-01",
+      "spearman": 0.559017,
+      "ndcg3": 0.914608,
+      "winner_correct": true,
+      "podium_hits": 2,
+      "mean_abs_delta": 3.736842
+    },
+    {
+      "slug": "2025-10-canadian-grand-prix",
+      "race_name": "Canadian Grand Prix",
+      "race_date": "2025-06-15",
+      "spearman": 0.560242,
+      "ndcg3": 0.978797,
+      "winner_correct": false,
+      "podium_hits": 2,
+      "mean_abs_delta": 4.15
+    },
+    {
+      "slug": "2025-11-austrian-grand-prix",
+      "race_name": "Austrian Grand Prix",
+      "race_date": "2025-06-29",
+      "spearman": 0.578117,
+      "ndcg3": 0.996806,
+      "winner_correct": true,
+      "podium_hits": 3,
+      "mean_abs_delta": 4.0
+    },
+    {
+      "slug": "2025-12-british-grand-prix",
+      "race_name": "British Grand Prix",
+      "race_date": "2025-07-06",
+      "spearman": 0.46668,
+      "ndcg3": 0.926807,
+      "winner_correct": false,
+      "podium_hits": 2,
+      "mean_abs_delta": 5.1
+    },
+    {
+      "slug": "2025-13-belgian-grand-prix",
+      "race_name": "Belgian Grand Prix",
+      "race_date": "2025-07-27",
+      "spearman": 0.831579,
+      "ndcg3": 0.990996,
+      "winner_correct": false,
+      "podium_hits": 3,
+      "mean_abs_delta": 2.3
+    },
+    {
+      "slug": "2025-14-hungarian-grand-prix",
+      "race_name": "Hungarian Grand Prix",
+      "race_date": "2025-08-03",
+      "spearman": 0.796992,
+      "ndcg3": 0.951205,
+      "winner_correct": false,
+      "podium_hits": 2,
+      "mean_abs_delta": 3.0
+    },
+    {
+      "slug": "2025-15-dutch-grand-prix",
+      "race_name": "Dutch Grand Prix",
+      "race_date": "2025-08-31",
+      "spearman": 0.082831,
+      "ndcg3": 0.735122,
+      "winner_correct": true,
+      "podium_hits": 2,
+      "mean_abs_delta": 5.85
+    },
+    {
+      "slug": "2025-16-italian-grand-prix",
+      "race_name": "Italian Grand Prix",
+      "race_date": "2025-09-07",
+      "spearman": 0.725837,
+      "ndcg3": 1.0,
+      "winner_correct": false,
+      "podium_hits": 3,
+      "mean_abs_delta": 2.95
+    },
+    {
+      "slug": "2025-17-azerbaijan-grand-prix",
+      "race_name": "Azerbaijan Grand Prix",
+      "race_date": "2025-09-21",
+      "spearman": 0.678195,
+      "ndcg3": 0.777227,
+      "winner_correct": true,
+      "podium_hits": 2,
+      "mean_abs_delta": 2.9
+    },
+    {
+      "slug": "2025-18-singapore-grand-prix",
+      "race_name": "Singapore Grand Prix",
+      "race_date": "2025-10-05",
+      "spearman": 0.822556,
+      "ndcg3": 0.987801,
+      "winner_correct": false,
+      "podium_hits": 2,
+      "mean_abs_delta": 2.4
+    },
+    {
+      "slug": "2025-19-united-states-grand-prix",
+      "race_name": "United States Grand Prix",
+      "race_date": "2025-10-19",
+      "spearman": 0.778947,
+      "ndcg3": 0.990996,
+      "winner_correct": false,
+      "podium_hits": 3,
+      "mean_abs_delta": 2.6
+    },
+    {
+      "slug": "2025-20-mexico-city-grand-prix",
+      "race_name": "Mexico City Grand Prix",
+      "race_date": "2025-10-26",
+      "spearman": 0.736609,
+      "ndcg3": 0.91984,
+      "winner_correct": true,
+      "podium_hits": 2,
+      "mean_abs_delta": 3.9
+    },
+    {
+      "slug": "2025-21-sao-paulo-grand-prix",
+      "race_name": "S\u00e3o Paulo Grand Prix",
+      "race_date": "2025-11-09",
+      "spearman": 0.591868,
+      "ndcg3": 0.746441,
+      "winner_correct": true,
+      "podium_hits": 1,
+      "mean_abs_delta": 3.85
+    },
+    {
+      "slug": "2025-22-las-vegas-grand-prix",
+      "race_name": "Las Vegas Grand Prix",
+      "race_date": "2025-11-22",
+      "spearman": 0.451717,
+      "ndcg3": 0.34446,
+      "winner_correct": false,
+      "podium_hits": 1,
+      "mean_abs_delta": 4.45
+    },
+    {
+      "slug": "2025-23-qatar-grand-prix",
+      "race_name": "Qatar Grand Prix",
+      "race_date": "2025-11-30",
+      "spearman": 0.683722,
+      "ndcg3": 0.978797,
+      "winner_correct": false,
+      "podium_hits": 2,
+      "mean_abs_delta": 4.35
+    },
+    {
+      "slug": "2025-24-abu-dhabi-grand-prix",
+      "race_name": "Abu Dhabi Grand Prix",
+      "race_date": "2025-12-07",
+      "spearman": 0.748685,
+      "ndcg3": 0.996806,
+      "winner_correct": true,
+      "podium_hits": 3,
+      "mean_abs_delta": 2.7
+    },
+    {
+      "slug": "2026-01-australian-grand-prix",
+      "race_name": "Australian Grand Prix",
+      "race_date": "2026-03-08",
+      "spearman": 0.673371,
+      "ndcg3": 0.996806,
+      "winner_correct": true,
+      "podium_hits": 2,
+      "mean_abs_delta": 5.090909
+    },
+    {
+      "slug": "2026-02-chinese-grand-prix",
+      "race_name": "Chinese Grand Prix",
+      "race_date": "2026-03-15",
+      "spearman": 0.643242,
+      "ndcg3": 1.0,
+      "winner_correct": false,
+      "podium_hits": 3,
+      "mean_abs_delta": 4.863636
+    },
+    {
+      "slug": "2026-03-japanese-grand-prix",
+      "race_name": "Japanese Grand Prix",
+      "race_date": "2026-03-29",
+      "spearman": 0.8819,
+      "ndcg3": 0.981412,
+      "winner_correct": true,
+      "podium_hits": 2,
+      "mean_abs_delta": 2.363636
+    },
+    {
+      "slug": "2026-04-miami-grand-prix",
+      "race_name": "Miami Grand Prix",
+      "race_date": "2026-05-03",
+      "spearman": 0.728245,
+      "ndcg3": 0.892827,
+      "winner_correct": true,
+      "podium_hits": 1,
+      "mean_abs_delta": 4.363636
+    },
+    {
+      "slug": "2026-05-canadian-grand-prix",
+      "race_name": "Canadian Grand Prix",
+      "race_date": "2026-05-24",
+      "spearman": 0.477437,
+      "ndcg3": 0.34446,
+      "winner_correct": false,
+      "podium_hits": 1,
+      "mean_abs_delta": 6.590909
+    },
+    {
+      "slug": "2026-06-monaco-grand-prix",
+      "race_name": "Monaco Grand Prix",
+      "race_date": "2026-06-07",
+      "spearman": 0.310424,
+      "ndcg3": 0.735122,
+      "winner_correct": true,
+      "podium_hits": 2,
+      "mean_abs_delta": 6.136364
+    },
+    {
+      "slug": "2026-07-barcelona-grand-prix",
+      "race_name": "Barcelona Grand Prix",
+      "race_date": "2026-06-14",
+      "spearman": 0.705112,
+      "ndcg3": 0.783616,
+      "winner_correct": true,
+      "podium_hits": 3,
+      "mean_abs_delta": 5.090909
+    },
+    {
+      "slug": "2026-08-austrian-grand-prix",
+      "race_name": "Austrian Grand Prix",
+      "race_date": "2026-06-28",
+      "spearman": 0.784729,
+      "ndcg3": 0.883243,
+      "winner_correct": true,
+      "podium_hits": 1,
+      "mean_abs_delta": 4.318182
+    },
+    {
+      "slug": "2026-09-british-grand-prix",
+      "race_name": "British Grand Prix",
+      "race_date": "2026-07-05",
+      "spearman": 0.50416,
+      "ndcg3": 0.655239,
+      "winner_correct": false,
+      "podium_hits": 2,
+      "mean_abs_delta": 4.954545
+    }
+  ]
+}

@@ -7,7 +7,6 @@ Run with:
 import sys
 from pathlib import Path
 
-import numpy as np
 import pandas as pd
 import streamlit as st
 
@@ -170,16 +169,14 @@ if st.button("Predict race outcome", type="primary", use_container_width=True):
                 if col not in race_features.columns:
                     race_features[col] = 0.5
 
-            result = predictor.predict(race_features)
+            result = predictor.predict_with_sim(race_features, n_sims=3000)
             result = result.merge(
                 grid_df.rename(columns={"Driver": "driver", "Team": "team", "Position": "start"}),
                 on=["driver", "team"],
                 how="left",
             )
-            # Softmax of ranker scores → per-driver win-probability as confidence %
-            scores = result["pred_score"].values
-            exp_s = np.exp(scores - scores.max())
-            result["confidence"] = exp_s / exp_s.sum() * 100
+            # Plackett-Luce win probability as the confidence %
+            result["confidence"] = result["p_win"] * 100
         except Exception as e:
             st.error(f"Prediction failed: {e}")
             st.stop()
@@ -210,10 +207,14 @@ if st.button("Predict race outcome", type="primary", use_container_width=True):
     st.divider()
     st.subheader("Full Predicted Ranking")
 
-    display = result[["pred_finish", "driver", "team", "confidence", "pred_score"]].copy()
-    display.columns = ["Predicted Finish", "Driver", "Team", "Confidence", "Model Score"]
-    display["Confidence"] = display["Confidence"].map(lambda x: f"{x:.1f}%")
-    display["Model Score"] = display["Model Score"].round(4)
+    display = result[
+        ["pred_finish", "driver", "team", "confidence", "p_podium", "p_points", "p_dnf"]
+    ].copy()
+    display.columns = ["Predicted Finish", "Driver", "Team", "Win %", "Podium %", "Points %", "DNF %"]
+    for col in ["Win %", "Podium %", "Points %", "DNF %"]:
+        scale = 1 if col == "Win %" else 100
+        source = {"Win %": "confidence", "Podium %": "p_podium", "Points %": "p_points", "DNF %": "p_dnf"}[col]
+        display[col] = (result[source] * scale).map(lambda x: f"{x:.1f}%")
 
     def _colour_team(val):
         c = TEAM_COLOURS.get(val, "#333")

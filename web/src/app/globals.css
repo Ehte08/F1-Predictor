@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+
+  /* Motion — Emil-style strong curves. Built-in CSS easings are too weak. */
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-io: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: #0a0a0a;
+  overflow-x: hidden;
+}
+
+/* ── Type roles ────────────────────────────────────────────────────────── */
+/* Display: Anton. Tight tracking, optical size only at large sizes. */
+.t-display {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 0.88;
+  text-transform: uppercase;
+}
+/* Numeric/technical readouts. Tabular so columns never jitter. */
+.t-data {
+  font-family: var(--font-mono), monospace;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+/* Small technical labels — the mono kicker used sparingly, not per section. */
+.t-label {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #7c7c85;
+}
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Telemetry surface motifs ──────────────────────────────────────────── */
+/* Fine technical grid — deliberate, low-contrast. Replaces flat black. */
+.telemetry-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+/* Carbon weave, tighter + darker than before so it reads as material, not noise. */
+.carbon-weave {
+  background-color: #0a0a0a;
+  background-image:
+    linear-gradient(27deg, #121216 3px, transparent 3px),
+    linear-gradient(207deg, #121216 3px, transparent 3px),
+    linear-gradient(27deg, #0d0d10 3px, transparent 3px),
+    linear-gradient(207deg, #0d0d10 3px, transparent 3px);
+  background-size: 8px 8px;
+  background-position: 0 0, 4px 4px, 4px 0, 8px 4px;
+}
+
+/* Start-light / sector-tick hairline: full rule that draws in via GSAP scaleX. */
+.rule {
+  height: 1px;
+  background: #232329;
+  transform-origin: left center;
+}
+.rule-live {
+  height: 1px;
+  background: linear-gradient(90deg, #dc0000 0%, #dc0000 22%, #232329 22%);
+}
+
+/* Film grain — fixed, pointer-events none, breaks digital flatness. */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.vignette::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    130% 100% at 30% 20%,
+    transparent 45%,
+    rgba(0, 0, 0, 0.72) 100%
+  );
+}
+
+/* ── Scrollbar ─────────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a30;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #dc0000;
+}
+
+.section-anchor {
+  scroll-margin-top: 88px;
+}
+
+/* ── Focus visibility (a11y) ───────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid #dc0000;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.no-native-select {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Range input thumb — pared back, precise. */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 14px;
+  width: 14px;
+  background: #f4f4f5;
+  border: 3px solid #dc0000;
+  cursor: pointer;
+  border-radius: 1px;
+  transition: transform 140ms var(--ease-out-quart);
+}
+input[type="range"]::-webkit-slider-thumb:active {
+  transform: scale(1.18);
+}
+input[type="range"]::-moz-range-thumb {
+  height: 14px;
+  width: 14px;
+  background: #f4f4f5;
+  border: 3px solid #dc0000;
+  border-radius: 1px;
+  cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

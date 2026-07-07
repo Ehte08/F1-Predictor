@@ -1,5 +1,9 @@
 """
-Train the F1 race outcome predictor and save the model artifact.
+Train the F1 race-outcome predictor and save all artifacts.
+
+Orchestrates: fetch new races → clean → time-split evaluation (ranker + DNF) →
+refit ranker + DNF + calibrate tau on ALL data → save pickle bundle → feature
+snapshot (incl. Elo + team pace + quali fallback) → browser_model.json export.
 
 Usage:
     python train.py
@@ -8,17 +12,23 @@ Usage:
 """
 import argparse
 import pickle
+import warnings
 from pathlib import Path
 
 import mlflow
 import pandas as pd
 
+from src.artifacts import export_browser_model, model_version
 from src.config import MODEL_PATH, SNAPSHOT_PATH, TEST_FRAC
 from src.data.cleaner import build_base_dataframe
 from src.data.fetcher import update_race_cache
-from src.features.engineer import build_feature_snapshot, prepare_features
+from src.features.engineer import build_feature_snapshot
+from src.models.dnf import evaluate_dnf
 from src.models.evaluate import summarize
-from src.models.train import fit, predict_on_df, time_based_split
+from src.models.pipeline import engineer_full, train_upto
+from src.models.train import time_based_split
+
+warnings.filterwarnings("ignore")
 
 
 def main(
@@ -35,30 +45,31 @@ def main(
     df = build_base_dataframe()
     print(f"  {len(df):,} rows | {df['date'].nunique()} races | {df['driver'].nunique()} drivers")
 
+    eng = engineer_full(df)
+
+    # ── Time-split evaluation (ranker order + DNF AUC) ──
     train_df, test_df = time_based_split(df, test_frac=test_frac)
+    cutoff = pd.Timestamp(test_df["date"].min())
     print(
-        f"  Train: {train_df['date'].nunique()} races "
-        f"({train_df['date'].min().date()} → {train_df['date'].max().date()})"
-    )
-    print(
-        f"  Test:  {test_df['date'].nunique()} races "
+        f"  Train < {cutoff.date()} | Test: {test_df['date'].nunique()} races "
         f"({test_df['date'].min().date()} → {test_df['date'].max().date()})"
     )
 
-    print("\nFitting LGBMRanker on train split...")
-    model, feature_names = fit(train_df)
+    print("\nFitting ranker + DNF on train split...")
+    bundle = train_upto(eng, cutoff)
+    model, feature_names = bundle["ranker"], bundle["feats"]
 
-    print("Evaluating on held-out test races...")
-    X_test, _ = prepare_features(test_df)
-    # prepare_features re-sorts by ["date", "driver"] — mirror that sort for the pred_df
-    pred_df = test_df.sort_values(["date", "driver"]).reset_index(drop=True).copy()
-    pred_df["pred_score"] = model.predict(X_test[feature_names])
+    # Score the held-out races from the already-engineered matrix (leakage-safe).
+    test_mask = (eng["meta"]["date"] >= cutoff).to_numpy()
+    pred_df = eng["meta"].loc[test_mask].copy()
+    pred_df["pred_score"] = model.predict(eng["X"].loc[test_mask, feature_names])
     pred_df["pred_finish"] = (
-        pred_df.groupby("date")["pred_score"]
-        .rank(ascending=False, method="first")
-        .astype(int)
+        pred_df.groupby("date")["pred_score"].rank(ascending=False, method="first").astype(int)
     )
     metrics = summarize(pred_df)
+    dnf_metrics = evaluate_dnf(df, test_frac=test_frac)
+    metrics.update(dnf_metrics)
+    metrics["tau"] = bundle["tau"]
 
     print("\n── Test-set metrics ─────────────────────────")
     for k, v in metrics.items():
@@ -76,31 +87,49 @@ def main(
                     "n_features": len(feature_names),
                 }
             )
-            mlflow.log_metrics(metrics)
+            mlflow.log_metrics({k: float(v) for k, v in metrics.items()})
             print("  MLflow run logged.")
 
-    # Refit on all data before saving so predictions use the full history
-    print("\nRefitting on full dataset before saving...")
-    model, feature_names = fit(df)
+    # ── Refit on ALL data before saving ──
+    print("\nRefitting ranker + DNF + tau on full dataset...")
+    final_cutoff = pd.Timestamp(df["date"].max()) + pd.Timedelta(days=1)
+    final = train_upto(eng, final_cutoff)
+    training_cutoff = str(df["date"].max().date())
 
     save_path = Path(save_path)
     save_path.parent.mkdir(parents=True, exist_ok=True)
     with open(save_path, "wb") as f:
         pickle.dump(
             {
-                "model": model,
-                "feature_names": feature_names,
-                "training_cutoff": str(df["date"].max().date()),
+                "model": final["ranker"],
+                "dnf_model": final["dnf_model"],
+                "feature_names": final["feats"],
+                "dnf_feature_names": final["dnf_feats"],
+                "tau": final["tau"],
+                "training_cutoff": training_cutoff,
             },
             f,
         )
-    print(f"  Model saved → {save_path}")
+    print(f"  Model bundle saved → {save_path}")
 
-    # Save feature snapshot for inference without rerunning the pipeline
     snap = build_feature_snapshot(df)
     with open(SNAPSHOT_PATH, "wb") as f:
         pickle.dump(snap, f)
     print(f"  Feature snapshot saved → {SNAPSHOT_PATH}")
+
+    export_browser_model(
+        version=model_version(),
+        trained_through=training_cutoff,
+        ranker=final["ranker"],
+        dnf_model=final["dnf_model"],
+        feats=final["feats"],
+        X_all=eng["X"],
+        tau=final["tau"],
+        snapshot=snap,
+        circuit_map=snap["circuit_map"],
+        driver_ages=snap["driver_ages"],
+    )
+    print("  Browser model exported → data/site/model/browser_model.json")
 
     return metrics
 

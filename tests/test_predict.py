@@ -2,9 +2,9 @@
 import numpy as np
 import pandas as pd
 import pytest
-from unittest.mock import MagicMock, patch
+from unittest.mock import MagicMock
 
-from src.features.engineer import finish_to_relevance, prepare_features
+from src.features.engineer import finish_to_relevance
 
 
 # ── Prediction output correctness ─────────────────────────────────────────────
@@ -39,8 +39,9 @@ def make_race_df(feature_names: list[str]) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
-FEATURE_NAMES = ["start", "age_at_race", "rainfall", "driver_reliability_rolling10",
-                 "team_reliability_rolling10", "finish_rolling3", "year",
+FEATURE_NAMES = ["start", "age_at_race", "rainfall", "driver_reliability_ewm10",
+                 "team_reliability_ewm10", "finish_ewm3", "driver_elo",
+                 "team_pace_ewm5", "quali_gap_pct", "teammate_quali_delta", "year",
                  "avg_track_temp", "min_humidity", "driver_active", "team_active"]
 
 
@@ -108,8 +109,8 @@ def test_rolling_features_are_driver_scoped() -> None:
     df = pd.DataFrame(rows).sort_values(["driver", "date"]).reset_index(drop=True)
     result = add_rolling_features(df)
 
-    a_roll = result[result["driver"] == "Driver_A"]["finish_rolling3"].dropna().values
-    b_roll = result[result["driver"] == "Driver_B"]["finish_rolling3"].dropna().values
+    a_roll = result[result["driver"] == "Driver_A"]["finish_ewm3"].dropna().values
+    b_roll = result[result["driver"] == "Driver_B"]["finish_ewm3"].dropna().values
 
     # Driver_A averages ~1; Driver_B averages ~10 — they must never cross
     assert (a_roll < 5).all(), "Driver_A rolling average should be near 1, not contaminated by Driver_B"

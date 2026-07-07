@@ -51,6 +51,10 @@ class DriverResult(BaseModel):
     team: str
     start: int
     pred_score: float
+    p_win: float
+    p_podium: float
+    p_points: float
+    p_dnf: float
 
 
 class PredictResponse(BaseModel):
@@ -93,7 +97,8 @@ def predict(req: PredictRequest):
         if col not in race_df.columns:
             race_df[col] = 0.5
 
-    result = predictor.predict(race_df[predictor.feature_names + ["driver", "team", "start"]])
+    cols = predictor.feature_names + ["driver", "team", "start"]
+    result = predictor.predict_with_sim(race_df[cols], n_sims=5000)
 
     return PredictResponse(
         race=req.race_name,
@@ -106,6 +111,10 @@ def predict(req: PredictRequest):
                 team=str(row["team"]),
                 start=int(row["start"]),
                 pred_score=float(row["pred_score"]),
+                p_win=float(row["p_win"]),
+                p_podium=float(row["p_podium"]),
+                p_points=float(row["p_points"]),
+                p_dnf=float(row["p_dnf"]),
             )
             for _, row in result.iterrows()
         ],

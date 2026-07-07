@@ -3,16 +3,20 @@ from src.config import ACTIVE_CONSTRUCTORS, ACTIVE_DRIVERS, MIN_YEAR
 from src.data.fetcher import load_recent_seasons, load_recent_weather
 from src.data.loader import load_ergast, load_season2025, load_weather
 
-# Maps historical team names to current branding
+# Maps historical / prior-season team names onto the current (2026) constructor grid
+# so team_active flags and per-team features stay consistent across the rebrand chains.
 TEAM_ALIASES: dict[str, str] = {
     "Force India": "Aston Martin",
     "Racing Point": "Aston Martin",
-    "Alfa Romeo": "Sauber",
-    "Lotus F1": "Alpine",      # notebook had a typo 'Apline' here — fixed
+    "Alfa Romeo": "Audi",       # Sauber → Alfa Romeo → Kick Sauber → Audi (2026)
+    "Sauber": "Audi",
+    "Lotus F1": "Alpine",       # notebook had a typo 'Apline' here — fixed
     "Renault": "Alpine",
     "Alpine F1 Team": "Alpine",
-    "Toro Rosso": "RB F1 Team",
-    "AlphaTauri": "RB F1 Team",
+    "Toro Rosso": "Racing Bulls",  # Toro Rosso → AlphaTauri → RB → Racing Bulls
+    "AlphaTauri": "Racing Bulls",
+    "RB F1 Team": "Racing Bulls",
+    "RB": "Racing Bulls",
 }
 
 # Ergast drivers table lacks DOBs for 2025 rookies

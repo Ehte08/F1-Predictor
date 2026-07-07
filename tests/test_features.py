@@ -5,7 +5,10 @@ import pytest
 
 from src.data.cleaner import TEAM_ALIASES, _nationality
 from src.features.engineer import (
+    ELO_INIT,
+    add_elo_ratings,
     add_rolling_features,
+    add_team_pace,
     finish_to_relevance,
     prepare_features,
 )
@@ -73,48 +76,81 @@ def test_all_aliases_map_to_active_teams() -> None:
 
 # ── Rolling feature leakage ───────────────────────────────────────────────────
 
-def test_rolling_uses_shift_no_leakage() -> None:
+def test_ewm_uses_shift_no_leakage() -> None:
     """
-    The rolling features must be computed from *past* races only.
-    For race 0, the rolling value should be NaN/0.5 (no history yet).
-    For race 1, it should reflect race 0 only — NOT include race 1 itself.
+    finish_ewm3 must be computed from *past* races only (shift(1), span=3 EWM).
+    For race i the value must equal the EWM over finishes strictly before i.
     """
-    df = make_race_df(n_drivers=3, n_races=5)
+    df = make_race_df(n_drivers=3, n_races=6)
     result = add_rolling_features(df)
 
     for drv, g in result.groupby("driver"):
         g = g.sort_values("date").reset_index(drop=True)
-        # Row 0 has no prior history — rolling mean of nothing = NaN (filled to 0.5 later)
-        # Most importantly: finish_rolling3 at row i must not include finish at row i
         for i in range(1, len(g)):
-            prior_finishes = g.loc[:i - 1, "finish"].values
-            expected_roll3 = float(np.mean(prior_finishes[-3:]))
-            actual = g.loc[i, "finish_rolling3"]
-            assert abs(actual - expected_roll3) < 1e-6, (
-                f"{drv} race {i}: expected finish_rolling3={expected_roll3:.3f}, got {actual:.3f}"
+            prior = g.loc[: i - 1, "finish"]
+            expected = float(prior.ewm(span=3, min_periods=1).mean().iloc[-1])
+            actual = g.loc[i, "finish_ewm3"]
+            assert abs(actual - expected) < 1e-6, (
+                f"{drv} race {i}: expected finish_ewm3={expected:.3f}, got {actual:.3f}"
             )
 
 
-def test_rolling_features_never_include_current_race() -> None:
-    """driver_dnf for the current race must not affect driver_reliability_rolling10 for that same race."""
+def test_reliability_never_includes_current_race() -> None:
+    """driver_dnf for the current race must not affect driver_reliability_ewm10 that same race."""
     df = make_race_df(n_drivers=2, n_races=6)
-    # Artificially set the last race as a DNF
     last_date = df["date"].max()
     df.loc[df["date"] == last_date, "driver_dnf"] = 1
 
     result = add_rolling_features(df)
-
-    # The reliability value for the last race should reflect DNF *before* that date only
     for drv, g in result.groupby("driver"):
         g = g.sort_values("date").reset_index(drop=True)
-        last_rel = g.iloc[-1]["driver_reliability_rolling10"]
-        prev_dnfs = g.iloc[:-1]["finish"].isna()  # proxy — actual check is via rolling window
-        # If current-race DNF leaked into its own row, reliability would drop here
-        # Instead it should equal the reliability computed from prior races
-        second_last_rel = g.iloc[-2]["driver_reliability_rolling10"] if len(g) >= 2 else None
-        # The two reliability values must differ by at most 0/1 of one DNF event's contribution
-        if second_last_rel is not None:
-            assert last_rel >= 0, "Reliability is negative — something went wrong."
+        # Reliability at the last race must equal 1 - EWM(shift(1) DNF) over prior races.
+        prior_dnf = g.loc[: len(g) - 2, "driver_dnf"].astype(int)
+        expected = 1 - float(prior_dnf.ewm(span=10, min_periods=1).mean().iloc[-1])
+        actual = g.iloc[-1]["driver_reliability_ewm10"]
+        assert abs(actual - expected) < 1e-6, (
+            f"{drv}: reliability leaked current DNF (got {actual:.3f}, want {expected:.3f})"
+        )
+
+
+def test_elo_no_leakage() -> None:
+    """
+    driver_elo for race N uses the rating BEFORE race N.
+    First race must be the init rating; a perpetual winner's rating must only rise
+    on races *after* the wins (i.e. race 0 is untouched by its own result).
+    """
+    df = make_race_df(n_drivers=4, n_races=6)
+    result = add_elo_ratings(df)
+
+    for _, g in result.groupby("driver"):
+        g = g.sort_values("date").reset_index(drop=True)
+        assert abs(g.loc[0, "driver_elo"] - ELO_INIT) < 1e-9, "First race elo must equal init"
+
+    # Consistent winner (Driver_0, finish=1) should have non-decreasing pre-race elo
+    winner = result[result["driver"] == "Driver_0"].sort_values("date")
+    elos = winner["driver_elo"].to_numpy()
+    assert np.all(np.diff(elos) >= -1e-9), "Winner's pre-race elo should never fall"
+    assert elos[-1] > elos[0], "Consistent winner should gain elo over time"
+
+
+def test_team_pace_no_leakage() -> None:
+    """team_pace_ewm5 at race i must equal the EWM of prior team-race mean finishes (shift(1))."""
+    df = make_race_df(n_drivers=4, n_races=6)
+    result = add_team_pace(df)
+
+    # Rebuild expectation: per-team per-race mean finish, EWM span=5, shift(1)
+    race_team = df.groupby(["date", "team"])["finish"].mean().reset_index(name="tf")
+    race_team = race_team.sort_values("date")
+    race_team["exp"] = race_team.groupby("team")["tf"].transform(
+        lambda s: s.shift(1).ewm(span=5, min_periods=1).mean()
+    )
+    merged = result.merge(race_team[["date", "team", "exp"]], on=["date", "team"])
+    both = merged.dropna(subset=["team_pace_ewm5", "exp"])
+    assert np.allclose(both["team_pace_ewm5"], both["exp"]), "team_pace_ewm5 leaked current race"
+
+    # First race for each team must be NaN (no prior history)
+    first = result.sort_values("date").drop_duplicates("team", keep="first")
+    assert first["team_pace_ewm5"].isna().all(), "First team race should have no pace history"
 
 
 # ── finish_to_relevance ───────────────────────────────────────────────────────

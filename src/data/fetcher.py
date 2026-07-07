@@ -261,7 +261,7 @@ def update_race_cache(verbose: bool = True) -> int:
                     print(f"    ✓ {len(race_rows)} driver rows cached.")
             else:
                 if verbose:
-                    print(f"    ✗ No data returned.")
+                    print("    ✗ No data returned.")
 
     if verbose and fetched == 0:
         print("  Already up to date — no new races to fetch.")
